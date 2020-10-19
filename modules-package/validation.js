@@ -1,4 +1,4 @@
-export function validateFiled(object, key, keyDescription) {
+function validateField(object, key, keyDescription) {
   const errorList = [];
 
   const objectKeyValue = object[key];
@@ -19,7 +19,7 @@ export function validateObject(object, objectScheme) {
   const errorList = [];
 
   Object.keys(objectScheme).forEach((key) => {
-    errorList.push(...validateFiled(object, key, objectScheme[key]));
+    errorList.push(...validateField(object, key, objectScheme[key]));
   });
 
   return errorList;
